@@ -4,6 +4,7 @@ class Instafeed
     @options =
       target: 'instafeed'
       get: 'popular'
+      v2: false
       resolution: 'thumbnail'
       sortBy: 'none'
       links: true
@@ -39,7 +40,7 @@ class Instafeed
   # MAKE IT GO!
   run: (url) ->
     # make sure either a client id or access token is set
-    if typeof @options.feedId isnt 'number'
+    if typeof @options.feedId isnt 'number' and @options.v2 is false
       throw new Error "Missing feedId. Get it from bitsalad.co"
 
     # run the before() callback, if one is set
@@ -276,7 +277,10 @@ class Instafeed
   # function to inject into the document hearder
   _buildUrl: ->
     # set the base API URL
-    base = "https://api.bitsalad.co/v1/feeds/#{@options.feedId}?"
+    if @options.v2 is false
+      base = "https://api.bitsalad.co/v1/feeds/#{@options.feedId}?"
+    else
+      base = "https://api2.bitsalad.co/feeds/#{@options.feedId}?"
 
     # add the count limit
     if @options.limit?

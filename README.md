@@ -49,7 +49,7 @@ Instafeed with automatically look for a `<div id="instafeed"></div>` and fill it
 
 The only thing you'll need to get going is a __feed id__ from [BitSalad.co](http://bitsalad.co) - visit there now to easily register your Instagram account.
 
-- `feedId` - __Required__. Your feed ID from bitsalad.co
+- `feedId` - __Required__. Your feed ID from bitsalad.co. If using v2 just paste everything after `https://api2.bitsalad.co/feeds/` as a string
 - `target` - Either the ID name or the DOM element itself where you want to add the images to.
 - `template` - Custom HTML template to use for images. See [templating](#templating).
 - `sortBy` (string) - Sort the images in a set order. Available options are:
@@ -63,6 +63,7 @@ The only thing you'll need to get going is a __feed id__ from [BitSalad.co](http
     - `random` - Random order.
 - `links` - Wrap the images with a link to the photo on Instagram.
 - `limit` - Maximum number of Images to add. __Max of 60__.
+- `v2` - Whether or not to use the bitsalad.co v2 api. Defaults to `false`
 - `useHttp` - By default, image urls are protocol-relative. Set to `true`
   to use the standard `http://`.
 - `resolution` - Size of the images to get. Available options are:
