@@ -224,7 +224,7 @@
       if (this.options.v2 === false) {
         base = "https://api.bitsalad.co/v1/feeds/" + this.options.feedId + "?";
       } else {
-        base = "https://api2.bitsalad.co/feeds/" + this.options.feedId + "?";
+        base = "https://api2.bitsalad.co/feeds/" + this.options.feedId + "&";
       }
       if (this.options.limit != null) {
         base += "count=" + this.options.limit + "&";
