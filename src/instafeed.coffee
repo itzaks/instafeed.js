@@ -280,7 +280,7 @@ class Instafeed
     if @options.v2 is false
       base = "https://api.bitsalad.co/v1/feeds/#{@options.feedId}?"
     else
-      base = "https://api2.bitsalad.co/feeds/#{@options.feedId}?"
+      base = "https://api2.bitsalad.co/feeds/#{@options.feedId}&"
 
     # add the count limit
     if @options.limit?
